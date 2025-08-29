@@ -1,16 +1,13 @@
-### aws 세팅시
+### SETTING_nextjs_neon_prisma
 
-.env 생성 후 DB연결
-
-1. 로컬
+package.json에 "postinstall": "prisma generate" 추가해야 vercel 자동 빌드 에러안남.
 
 ```
-DATABASE_URL="mysql://root:{로컬 mysql 비번}@127.0.0.1:3306/db_prisma_basic"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "prisma generate"
+  },
 ```
-
-2. AWS
-
-```
-DATABASE_URL="mysql://admin:{AWS RDS 비번}@{AWS RDS의 엔드포인트 주소}/db_prisma_basic"
-```
-# SETTING_nextjs_neon_prisma
